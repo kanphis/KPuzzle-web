@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPuzzle — Privacy Policy</title>
+    <meta name="description" content="KPuzzle collects no data and works fully offline.">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FBF8FF">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121318">
+    <style>
+        /*
+         * Colors are the DEFAULT palette literals from
+         * shared/ui/theme/ThemePalettes.kt, the same set index.html freezes
+         * for its loader (background, onBackground, onSurfaceVariant,
+         * outlineVariant, primary, onPrimary). Keep them in sync.
+         */
+        :root {
+            color-scheme: light dark;
+            --bg: #FBF8FF;
+            --text: #1A1B21;
+            --muted: #45464F;
+            --line: #C6C5D0;
+            --link: #3D4ED8;
+            --on-primary: #FFFFFF;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121318;
+                --text: #E3E1E9;
+                --muted: #C6C5D0;
+                --line: #45464F;
+                --link: #BBC3FF;
+                --on-primary: #00209C;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        }
+        main {
+            max-width: 44rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.25rem 3.5rem;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--muted);
+            font-weight: 600;
+        }
+        .brand img { width: 32px; height: 32px; }
+        h1 { font-size: 1.75rem; line-height: 1.25; margin: 1rem 0 0.25rem; }
+        .updated { color: var(--muted); font-size: 0.9rem; margin: 0 0 1.5rem; }
+        /*
+         * Both language sections stay in the document: without JavaScript the
+         * page shows both, with it exactly one. The script below sets
+         * html[data-lang] from the locale / URL, never a server redirect.
+         */
+        html[data-lang="en"] section[lang="ru"],
+        html[data-lang="ru"] section[lang="en"] { display: none; }
+        .lang-switch {
+            display: inline-flex;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 0 0 2.25rem;
+        }
+        .lang-switch button {
+            appearance: none;
+            border: 0;
+            background: transparent;
+            color: var(--muted);
+            font: inherit;
+            font-size: 0.95rem;
+            padding: 0.35rem 1rem;
+            cursor: pointer;
+        }
+        .lang-switch button[aria-pressed="true"] {
+            background: var(--link);
+            color: var(--on-primary);
+            font-weight: 600;
+        }
+        .lang-switch button:focus-visible {
+            outline: 2px solid var(--link);
+            outline-offset: -3px;
+        }
+        section h2 { font-size: 1.15rem; margin: 1.75rem 0 0.4rem; }
+        section p { margin: 0.4rem 0; }
+        .callout {
+            border-left: 3px solid var(--link);
+            padding: 0.25rem 0 0.25rem 1rem;
+            margin: 0 0 0.5rem;
+        }
+        .callout p { margin: 0.25rem 0; }
+        a { color: var(--link); }
+        footer {
+            margin-top: 3rem;
+            border-top: 1px solid var(--line);
+            padding-top: 1rem;
+            color: var(--muted);
+        }
+        footer a { color: var(--link); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<main>
+    <header class="brand">
+        <img src="favicon.svg" alt="">
+        <span>KPuzzle</span>
+    </header>
+    <h1>Privacy Policy &middot; Политика конфиденциальности</h1>
+    <p class="updated">Last updated: September 9, 2026 &middot; Обновлено: 9 сентября 2026 года</p>
+
+    <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="false">English</button>
+        <button type="button" data-lang="ru" aria-pressed="false">Русский</button>
+    </div>
+
+    <section lang="en" id="en">
+        <div class="callout">
+            <p><strong>Short version: KPuzzle does not collect, process, or share any
+            personal data. The app works fully offline.</strong></p>
+        </div>
+
+        <h2>No data collection</h2>
+        <p>KPuzzle has no accounts, no analytics, no advertising, no tracking and no
+        cookies. We do not collect, store or transmit any personal information.</p>
+
+        <h2>Fully offline</h2>
+        <p>Puzzles are generated and solved on your device. Your progress, settings and
+        statistics are saved locally on your device only — in the browser's local
+        storage for the web version, or in the app's private storage on other
+        platforms. This data never leaves your device and is never sent to any server.
+        Clearing the app's data (or the site data in your browser) erases it
+        permanently.</p>
+
+        <h2>Web hosting</h2>
+        <p>The web version at kanphis.github.io/KPuzzle-web is served as static files
+        by GitHub Pages. The application itself makes no network requests after it has
+        loaded. GitHub's handling of request data is described in
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's
+        Privacy Statement</a>.</p>
+
+        <h2>Contact</h2>
+        <p>If you have questions about this policy, contact the developer at
+        <a href="https://github.com/kanphis">github.com/kanphis</a>.</p>
+    </section>
+
+    <section lang="ru" id="ru">
+        <div class="callout">
+            <p><strong>Коротко: KPuzzle не собирает, не обрабатывает и не передаёт
+            никакие персональные данные. Приложение полностью оффлайн.</strong></p>
+        </div>
+
+        <h2>Сбор данных отсутствует</h2>
+        <p>В KPuzzle нет аккаунтов, аналитики, рекламы, трекеров и cookie-файлов. Мы
+        не собираем, не храним и не передаём никакую личную информацию.</p>
+
+        <h2>Полностью оффлайн</h2>
+        <p>Головоломки генерируются и решаются на вашем устройстве. Прогресс, настройки
+        и статистика сохраняются только локально на вашем устройстве — в локальном
+        хранилище браузера для веб-версии или в закрытом хранилище приложения на других
+        платформах. Эти данные не покидают устройство и никуда не отправляются.
+        Очистка данных приложения (или данных сайта в браузере) удаляет их
+        безвозвратно.</p>
+
+        <h2>Хостинг веб-версии</h2>
+        <p>Веб-версия по адресу kanphis.github.io/KPuzzle-web раздаётся как статические
+        файлы сервисом GitHub Pages. После загрузки приложение не выполняет никаких
+        сетевых запросов. Обработка данных запросов GitHub описана в
+        <a lang="en" href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">заявлении
+        о конфиденциальности GitHub</a>.</p>
+
+        <h2>Контакты</h2>
+        <p>Вопросы по этой политике: разработчик на
+        <a href="https://github.com/kanphis">github.com/kanphis</a>.</p>
+    </section>
+
+    <footer>
+        <a href="./">&larr; Play KPuzzle</a>
+    </footer>
+</main>
+<script type="application/javascript">
+    /*
+     * Picks the visible language: ?lang= / #hash win over the browser
+     * locale; the choice is client-side only — no storage, no redirects,
+     * and without JavaScript both sections remain visible.
+     */
+    (function () {
+        var root = document.documentElement;
+        var buttons = document.querySelectorAll(".lang-switch button");
+        var titles = {
+            en: "KPuzzle — Privacy Policy",
+            ru: "KPuzzle — Политика конфиденциальности"
+        };
+
+        function apply(lang) {
+            root.setAttribute("data-lang", lang);
+            root.lang = lang;
+            document.title = titles[lang];
+            buttons.forEach(function (button) {
+                button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
+            });
+        }
+
+        function fromUrl() {
+            var explicit = new URLSearchParams(window.location.search).get("lang");
+            var hash = window.location.hash.replace("#", "");
+            if (explicit === "en" || explicit === "ru") return explicit;
+            if (hash === "en" || hash === "ru") return hash;
+            return null;
+        }
+
+        var initial = fromUrl();
+        if (!initial) {
+            var preferred = navigator.languages || [navigator.language || "en"];
+            initial = preferred.some(function (tag) {
+                return tag.toLowerCase().lastIndexOf("ru", 0) === 0;
+            }) ? "ru" : "en";
+        }
+        apply(initial);
+
+        buttons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                apply(button.dataset.lang);
+                try {
+                    history.replaceState(null, "", "#" + button.dataset.lang);
+                } catch (e) { /* sandboxed contexts may forbid URL changes */ }
+            });
+        });
+    })();
+</script>
+</body>
+</html>

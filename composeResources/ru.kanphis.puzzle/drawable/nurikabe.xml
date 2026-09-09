@@ -3,16 +3,22 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
+    <!-- Digits are Inter SemiBold outlines, tabular (tnum) with ss01
+         alternates — the board's digit style — baked as paths. Regenerate
+         from inter_variable.ttf if the icon changes. -->
     <path
-        android:pathData="M3.9,3.9h4.2v4.2h-4.2z M9.9,3.9h4.2v4.2h-4.2z M15.9,3.9h4.2v4.2h-4.2z M3.9,9.9h4.2v4.2h-4.2z M9.9,9.9h4.2v4.2h-4.2z M15.9,9.9h4.2v4.2h-4.2z M3.9,15.9h4.2v4.2h-4.2z M9.9,15.9h4.2v4.2h-4.2z M15.9,15.9h4.2v4.2h-4.2z"
+        android:pathData="M3.9,3.9H20.1V20.1H3.9Z M9.3,3.9V20.1 M14.7,3.9V20.1 M3.9,9.3H20.1 M3.9,14.7H20.1"
         android:strokeColor="#000000"
-        android:strokeWidth="1"
+        android:strokeWidth="1.25"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
         android:fillColor="#000000"
-        android:pathData="M9.9,3.9h4.2v4.2h-4.2z M9.9,9.9h4.2v4.2h-4.2z M9.9,15.9h4.2v4.2h-4.2z" />
+        android:pathData="M10.2,3.9 h3.6 a0.9,0.9 0 0 1 0.9,0.9 v3.6 a0.9,0.9 0 0 1 -0.9,0.9 h-3.6 a0.9,0.9 0 0 1 -0.9,-0.9 v-3.6 a0.9,0.9 0 0 1 0.9,-0.9 z M10.2,9.3 h3.6 a0.9,0.9 0 0 1 0.9,0.9 v3.6 a0.9,0.9 0 0 1 -0.9,0.9 h-3.6 a0.9,0.9 0 0 1 -0.9,-0.9 v-3.6 a0.9,0.9 0 0 1 0.9,-0.9 z M15.6,9.3 h3.6 a0.9,0.9 0 0 1 0.9,0.9 v3.6 a0.9,0.9 0 0 1 -0.9,0.9 h-3.6 a0.9,0.9 0 0 1 -0.9,-0.9 v-3.6 a0.9,0.9 0 0 1 0.9,-0.9 z M15.6,14.7 h3.6 a0.9,0.9 0 0 1 0.9,0.9 v3.6 a0.9,0.9 0 0 1 -0.9,0.9 h-3.6 a0.9,0.9 0 0 1 -0.9,-0.9 v-3.6 a0.9,0.9 0 0 1 0.9,-0.9 z" />
     <path
         android:fillColor="#000000"
-        android:pathData="M4.9,6a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0z M16.9,6a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0z" />
+        android:pathData="M5.51 12.88V12.48L6.58 10.6H7.07L6.02 12.44V12.47H7.69V12.88ZM6.85 13.4V12.76L6.86 12.58V11.65H7.32V13.4Z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M16.48 8V7.59H18.32V8ZM17.72 5.2V8H17.22V5.65H17.2L16.55 6.12V5.64L17.17 5.2Z" />
 </vector>

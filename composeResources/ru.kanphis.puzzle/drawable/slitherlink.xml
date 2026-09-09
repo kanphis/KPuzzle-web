@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Digits are Inter SemiBold outlines, tabular (tnum) with ss01
+         alternates — the board's digit style — baked as paths. Regenerate
+         from inter_variable.ttf if the icon changes. -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M2.75,3.9a1.15,1.15 0 1,0 2.3,0a1.15,1.15 0 1,0 -2.3,0z M2.75,12a1.15,1.15 0 1,0 2.3,0a1.15,1.15 0 1,0 -2.3,0z M2.75,20.1a1.15,1.15 0 1,0 2.3,0a1.15,1.15 0 1,0 -2.3,0z M10.85,3.9a1.15,1.15 0 1,0 2.3,0a1.15,1.15 0 1,0 -2.3,0z M10.85,12a1.15,1.15 0 1,0 2.3,0a1.15,1.15 0 1,0 -2.3,0z M10.85,20.1a1.15,1.15 0 1,0 2.3,0a1.15,1.15 0 1,0 -2.3,0z M18.95,3.9a1.15,1.15 0 1,0 2.3,0a1.15,1.15 0 1,0 -2.3,0z M18.95,12a1.15,1.15 0 1,0 2.3,0a1.15,1.15 0 1,0 -2.3,0z M18.95,20.1a1.15,1.15 0 1,0 2.3,0a1.15,1.15 0 1,0 -2.3,0z" />
+    <!-- The finished loop: closed, riding the dot lattice. The clue is
+         exact — the top-left cell has exactly three loop edges. -->
+    <path
+        android:pathData="M3.9,3.9H12V12H20.1V20.1H3.9Z"
+        android:strokeColor="#000000"
+        android:strokeWidth="1.25"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M7.94 9.65Q7.6 9.65 7.33 9.53Q7.05 9.42 6.89 9.2Q6.73 8.99 6.72 8.7H7.33Q7.34 8.84 7.42 8.94Q7.51 9.04 7.64 9.09Q7.78 9.15 7.95 9.15Q8.13 9.15 8.26 9.08Q8.4 9.02 8.48 8.9Q8.56 8.78 8.56 8.6Q8.56 8.45 8.49 8.32Q8.41 8.19 8.25 8.11Q8.1 8.03 7.85 8.03H7.52V7.61L8.31 6.78V6.75H6.89V6.25H9.05V6.69L7.95 7.81V7.69Q8.33 7.64 8.6 7.76Q8.88 7.88 9.03 8.11Q9.18 8.34 9.18 8.63Q9.18 8.94 9.02 9.17Q8.86 9.39 8.58 9.52Q8.3 9.65 7.94 9.65Z" />
+</vector>

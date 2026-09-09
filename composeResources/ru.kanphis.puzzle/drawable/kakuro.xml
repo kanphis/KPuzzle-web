@@ -3,15 +3,22 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
+    <!-- Digits are Inter SemiBold outlines, tabular (tnum) with ss01
+         alternates — the board's digit style — baked as paths. Regenerate
+         from inter_variable.ttf if the icon changes. -->
     <path
-        android:pathData="M3.9,3.9h4.2v4.2h-4.2z M9.9,3.9h4.2v4.2h-4.2z M15.9,3.9h4.2v4.2h-4.2z M3.9,9.9h4.2v4.2h-4.2z M9.9,9.9h4.2v4.2h-4.2z M15.9,9.9h4.2v4.2h-4.2z M3.9,15.9h4.2v4.2h-4.2z M9.9,15.9h4.2v4.2h-4.2z M15.9,15.9h4.2v4.2h-4.2z"
+        android:pathData="M3.9,3.9H20.1V20.1H3.9Z M9.3,3.9V20.1 M14.7,3.9V20.1 M3.9,9.3H20.1 M3.9,14.7H20.1"
         android:strokeColor="#000000"
-        android:strokeWidth="1"
+        android:strokeWidth="1.25"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
-        android:pathData="M3.9,3.9L8.1,8.1"
+        android:pathData="M3.9,3.9L9.3,9.3"
         android:strokeColor="#000000"
-        android:strokeWidth="1"
-        android:strokeLineCap="round" />
+        android:strokeWidth="1.25"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M11.24 13.4 12.43 11.04V11.02H11.05V10.6H12.95V11.03L11.76 13.4Z" />
 </vector>

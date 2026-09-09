@@ -3,21 +3,35 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
+    <!-- Flag is the board's flag mark, filled solid: the unfilled symbol's
+         outer silhouette (the hollow-pennant cutout dropped). The mine is the
+         board's plain circle; the digits are Inter SemiBold (tnum, ss01). The
+         board is consistent: mines at top-right and under the flag, so both
+         revealed cells read 2. -->
     <path
-        android:pathData="M3.9,3.9h7.2v7.2h-7.2z M12.9,3.9h7.2v7.2h-7.2z M3.9,12.9h7.2v7.2h-7.2z M12.9,12.9h7.2v7.2h-7.2z"
+        android:pathData="M3.9,3.9H20.1V20.1H3.9Z M12,3.9V20.1 M3.9,12H20.1"
         android:strokeColor="#000000"
-        android:strokeWidth="1"
+        android:strokeWidth="1.25"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
         android:fillColor="#000000"
-        android:pathData="M5.29,9.8 L5.29,5.2 L7.72,5.2 L7.83,5.75 L9.34,5.75 L9.34,8.44 L7.45,8.44 L7.34,7.91 L6.05,7.91 L6.05,9.8 Z" />
+        android:pathData="M6.81 9.65V9.22L7.98 8.07Q8.14 7.9 8.25 7.77Q8.36 7.64 8.42 7.52Q8.48 7.4 8.48 7.25Q8.48 7.09 8.4 6.98Q8.33 6.86 8.21 6.8Q8.08 6.74 7.92 6.74Q7.75 6.74 7.63 6.81Q7.5 6.88 7.44 7Q7.37 7.13 7.37 7.3H6.79Q6.79 6.98 6.94 6.75Q7.08 6.51 7.34 6.38Q7.6 6.25 7.93 6.25Q8.26 6.25 8.52 6.38Q8.77 6.5 8.91 6.72Q9.06 6.94 9.06 7.22Q9.06 7.41 8.99 7.59Q8.92 7.77 8.74 7.99Q8.56 8.21 8.23 8.53L7.64 9.12V9.15H9.11V9.65Z" />
     <path
         android:fillColor="#000000"
-        android:pathData="M14.8,16.5a1.7,1.7 0 1,0 3.4,0a1.7,1.7 0 1,0 -3.4,0z" />
+        android:pathData="M14.15,7.95a1.9,1.9 0 1,0 3.8,0a1.9,1.9 0 1,0 -3.8,0z" />
     <path
-        android:pathData="M16.5,14.6 L16.5,14.2 M16.5,18.4 L16.5,18.8 M18.4,16.5 L18.8,16.5 M14.6,16.5 L14.2,16.5 M17.85,15.15 L18.15,14.85 M17.85,17.85 L18.15,18.15 M15.15,15.15 L14.85,14.85 M15.15,17.85 L14.85,18.15"
-        android:strokeColor="#000000"
-        android:strokeWidth="1"
-        android:strokeLineCap="round" />
+        android:fillColor="#000000"
+        android:pathData="M6.81 17.75V17.32L7.98 16.17Q8.14 16 8.25 15.87Q8.36 15.74 8.42 15.62Q8.48 15.5 8.48 15.35Q8.48 15.19 8.4 15.08Q8.33 14.96 8.21 14.9Q8.08 14.84 7.92 14.84Q7.75 14.84 7.63 14.91Q7.5 14.98 7.44 15.1Q7.37 15.23 7.37 15.4H6.79Q6.79 15.08 6.94 14.85Q7.08 14.61 7.34 14.48Q7.6 14.35 7.93 14.35Q8.26 14.35 8.52 14.48Q8.77 14.6 8.91 14.82Q9.06 15.04 9.06 15.32Q9.06 15.51 8.99 15.69Q8.92 15.87 8.74 16.09Q8.56 16.31 8.23 16.63L7.64 17.22V17.25H9.11V17.75Z" />
+    <group
+        android:translateX="12.520588"
+        android:translateY="12.520588"
+        android:scaleX="0.007059"
+        android:scaleY="0.007059">
+        <group android:translateY="960">
+            <path
+                android:fillColor="#000000"
+                android:pathData="M280-400v240q0 17-11.5 28.5T240-120q-17 0-28.5-11.5T200-160v-600q0-17 11.5-28.5T240-800h287q14 0 25 9t14 23l10 48h184q17 0 28.5 11.5T800-680v320q0 17-11.5 28.5T760-320H553q-14 0-25-9t-14-23l-10-48H280Z" />
+        </group>
+    </group>
 </vector>

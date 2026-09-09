@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- The board: the ink box cut into three rectangles by one full vertical
+         and one horizontal stroke over the right column — a partition on the
+         siblings' 5.4 cell lattice (the 14.7 / 9.3 lines), mid-solve. -->
+    <path
+        android:pathData="M3.9,3.9H20.1V20.1H3.9Z M14.7,3.9V20.1 M14.7,9.3H20.1"
+        android:strokeColor="#000000"
+        android:strokeWidth="1.25"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <!-- The clue digits, centred in their rectangles, each matching its
+         rectangle's area (6 = 2×3 left, 1 = 1×1 top right, 2 = 1×2 bottom
+         right) — one clue per placed rectangle, like the board. Inter
+         SemiBold outlines, tabular (tnum) with the ss01 open six — the
+         board's digit style — baked as paths. Regenerate from
+         inter_variable.ttf if the icon changes. -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M9.31 13.4Q9.04 13.4 8.82 13.29Q8.6 13.17 8.47 12.97Q8.35 12.76 8.35 12.47Q8.35 12.26 8.43 12.05Q8.52 11.83 8.71 11.54L9.35 10.6H9.86L8.97 11.9H8.86Q8.89 11.83 8.97 11.76Q9.05 11.7 9.16 11.66Q9.27 11.63 9.41 11.63Q9.66 11.63 9.85 11.73Q10.04 11.83 10.15 12.02Q10.25 12.21 10.25 12.48Q10.25 12.75 10.13 12.96Q10.01 13.17 9.79 13.28Q9.58 13.4 9.31 13.4ZM9.3 13Q9.45 13 9.55 12.94Q9.66 12.87 9.73 12.75Q9.79 12.64 9.79 12.49Q9.79 12.33 9.73 12.22Q9.66 12.1 9.55 12.04Q9.45 11.97 9.3 11.97Q9.16 11.97 9.05 12.04Q8.94 12.1 8.88 12.22Q8.82 12.33 8.82 12.48Q8.82 12.63 8.88 12.75Q8.94 12.87 9.05 12.94Q9.16 13 9.3 13Z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M16.48 8V7.59H18.32V8ZM17.72 5.2V8H17.22V5.65H17.2L16.55 6.12V5.64L17.17 5.2Z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M16.46 16.1V15.74L17.42 14.8Q17.56 14.66 17.65 14.55Q17.74 14.45 17.79 14.34Q17.83 14.24 17.83 14.13Q17.83 14 17.77 13.9Q17.71 13.81 17.61 13.75Q17.51 13.7 17.38 13.7Q17.24 13.7 17.14 13.76Q17.03 13.82 16.98 13.92Q16.92 14.02 16.92 14.16L16.45 14.16Q16.45 13.9 16.57 13.71Q16.69 13.51 16.9 13.41Q17.11 13.3 17.38 13.3Q17.66 13.3 17.87 13.4Q18.08 13.51 18.19 13.69Q18.31 13.87 18.31 14.1Q18.31 14.25 18.25 14.4Q18.2 14.55 18.05 14.73Q17.9 14.92 17.63 15.18L17.15 15.67V15.69H18.35V16.1Z" />
+</vector>
