@@ -65,20 +65,17 @@
         h1 { font-size: 1.75rem; line-height: 1.25; margin: 1.25rem 0 0.25rem; }
         .updated { color: var(--muted); font-size: 0.9rem; margin: 0 0 1.75rem; }
         /*
-         * The title and date line carry both languages in nested spans and
-         * collapse to one under html[data-lang], like the sections; the
-         * separator dot only shows while both are visible (no JavaScript).
+         * Language switching is client-side: the script sets html[data-lang]
+         * and these rules collapse the page to one language — the title and
+         * date line carry both in nested spans (.t-en/.t-ru), the body is
+         * one <section> per language. Without JavaScript everything stays
+         * visible; the separator dots only show in that no-JS view.
          */
+        html[data-lang="en"] section[lang="ru"],
+        html[data-lang="ru"] section[lang="en"],
         html[data-lang="en"] .t-ru,
         html[data-lang="ru"] .t-en,
         html[data-lang] .sep { display: none; }
-        /*
-         * Both language sections stay in the document: without JavaScript the
-         * page shows both, with it exactly one. The script below sets
-         * html[data-lang] from the locale / URL, never a server redirect.
-         */
-        html[data-lang="en"] section[lang="ru"],
-        html[data-lang="ru"] section[lang="en"] { display: none; }
         .lang-switch {
             display: inline-flex;
             border: 1px solid var(--line);
@@ -144,7 +141,7 @@
         <span lang="ru" class="t-ru">Обновлено: 9 сентября 2026 года</span>
     </p>
 
-    <section lang="en" id="en">
+    <section lang="en">
         <div class="callout">
             <p><strong>Short version: KPuzzle does not collect, process, or share any
             personal data. The app works fully offline.</strong></p>
@@ -174,7 +171,7 @@
         <a href="https://github.com/kanphis">github.com/kanphis</a>.</p>
     </section>
 
-    <section lang="ru" id="ru">
+    <section lang="ru">
         <div class="callout">
             <p><strong>Коротко: KPuzzle не собирает, не обрабатывает и не передаёт
             никакие персональные данные. Приложение полностью оффлайн.</strong></p>
@@ -210,50 +207,53 @@
 </main>
 <script type="application/javascript">
     /*
-     * Picks the visible language: ?lang= / #hash win over the browser
-     * locale; the choice is client-side only — no storage, no redirects,
-     * and without JavaScript both sections remain visible.
+     * Picks the visible language: ?lang= or the hash win over the browser
+     * locale. The choice is client-side only — no storage, no redirects —
+     * and without JavaScript both languages remain visible. The sections
+     * deliberately carry no matching id: the hash selects a language, it is
+     * not an anchor, so opening #ru must not jump the page.
      */
-    (function () {
-        var root = document.documentElement;
-        var buttons = document.querySelectorAll(".lang-switch button");
-        var titles = {
+    (() => {
+        const root = document.documentElement;
+        const buttons = document.querySelectorAll(".lang-switch button");
+        const titles = {
             en: "KPuzzle — Privacy Policy",
-            ru: "KPuzzle — Политика конфиденциальности"
+            ru: "KPuzzle — Политика конфиденциальности",
         };
 
-        function apply(lang) {
+        const apply = (lang) => {
             root.setAttribute("data-lang", lang);
             root.lang = lang;
             document.title = titles[lang];
-            buttons.forEach(function (button) {
+            buttons.forEach((button) => {
                 button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
             });
-        }
+        };
 
-        function fromUrl() {
-            var explicit = new URLSearchParams(window.location.search).get("lang");
-            var hash = window.location.hash.replace("#", "");
-            if (explicit === "en" || explicit === "ru") return explicit;
+        const fromUrl = () => {
+            const query = new URLSearchParams(window.location.search).get("lang");
+            const hash = window.location.hash.replace("#", "");
+            if (query === "en" || query === "ru") return query;
             if (hash === "en" || hash === "ru") return hash;
             return null;
+        };
+
+        const requested = fromUrl();
+        if (requested) {
+            apply(requested);
+        } else {
+            const preferred = navigator.languages || [navigator.language || "en"];
+            apply(preferred.some((tag) => tag.toLowerCase().startsWith("ru")) ? "ru" : "en");
         }
 
-        var initial = fromUrl();
-        if (!initial) {
-            var preferred = navigator.languages || [navigator.language || "en"];
-            initial = preferred.some(function (tag) {
-                return tag.toLowerCase().lastIndexOf("ru", 0) === 0;
-            }) ? "ru" : "en";
-        }
-        apply(initial);
-
-        buttons.forEach(function (button) {
-            button.addEventListener("click", function () {
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
                 apply(button.dataset.lang);
                 try {
                     history.replaceState(null, "", "#" + button.dataset.lang);
-                } catch (e) { /* sandboxed contexts may forbid URL changes */ }
+                } catch {
+                    // sandboxed contexts may forbid URL changes
+                }
             });
         });
     })();
