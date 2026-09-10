@@ -48,6 +48,12 @@
             margin: 0 auto;
             padding: 2.5rem 1.25rem 3.5rem;
         }
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
         .brand {
             display: flex;
             align-items: center;
@@ -56,8 +62,16 @@
             font-weight: 600;
         }
         .brand img { width: 32px; height: 32px; }
-        h1 { font-size: 1.75rem; line-height: 1.25; margin: 1rem 0 0.25rem; }
-        .updated { color: var(--muted); font-size: 0.9rem; margin: 0 0 1.5rem; }
+        h1 { font-size: 1.75rem; line-height: 1.25; margin: 1.25rem 0 0.25rem; }
+        .updated { color: var(--muted); font-size: 0.9rem; margin: 0 0 1.75rem; }
+        /*
+         * The title and date line carry both languages in nested spans and
+         * collapse to one under html[data-lang], like the sections; the
+         * separator dot only shows while both are visible (no JavaScript).
+         */
+        html[data-lang="en"] .t-ru,
+        html[data-lang="ru"] .t-en,
+        html[data-lang] .sep { display: none; }
         /*
          * Both language sections stay in the document: without JavaScript the
          * page shows both, with it exactly one. The script below sets
@@ -70,7 +84,6 @@
             border: 1px solid var(--line);
             border-radius: 8px;
             overflow: hidden;
-            margin: 0 0 2.25rem;
         }
         .lang-switch button {
             appearance: none;
@@ -79,7 +92,7 @@
             color: var(--muted);
             font: inherit;
             font-size: 0.95rem;
-            padding: 0.35rem 1rem;
+            padding: 0.25rem 0.8rem;
             cursor: pointer;
         }
         .lang-switch button[aria-pressed="true"] {
@@ -112,17 +125,24 @@
 </head>
 <body>
 <main>
-    <header class="brand">
-        <img src="favicon.svg" alt="">
-        <span>KPuzzle</span>
+    <header class="top">
+        <div class="brand">
+            <img src="favicon.svg" alt="">
+            <span>KPuzzle</span>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+            <button type="button" data-lang="ru" aria-pressed="false" aria-label="Русский">RU</button>
+        </div>
     </header>
-    <h1>Privacy Policy &middot; Политика конфиденциальности</h1>
-    <p class="updated">Last updated: September 9, 2026 &middot; Обновлено: 9 сентября 2026 года</p>
-
-    <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" data-lang="en" aria-pressed="false">English</button>
-        <button type="button" data-lang="ru" aria-pressed="false">Русский</button>
-    </div>
+    <h1>
+        <span lang="en" class="t-en">Privacy Policy<span class="sep" aria-hidden="true"> &middot; </span></span>
+        <span lang="ru" class="t-ru">Политика конфиденциальности</span>
+    </h1>
+    <p class="updated">
+        <span lang="en" class="t-en">Last updated: September 9, 2026<span class="sep" aria-hidden="true"> &middot; </span></span>
+        <span lang="ru" class="t-ru">Обновлено: 9 сентября 2026 года</span>
+    </p>
 
     <section lang="en" id="en">
         <div class="callout">
