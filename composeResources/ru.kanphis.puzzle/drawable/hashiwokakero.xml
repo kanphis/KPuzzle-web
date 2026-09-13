@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- A four-island ring: the double bridge the puzzle is named for runs
+         along the top, singles turn down the right side and back along the
+         bottom, leaving the left side open. The singles ride the discs'
+         centre lines, the double straddles theirs. The strokes end on the
+         discs' circular shores — 7.41/16.59 is sqrt(2.35² − 1.5²) off each
+         centre, and 7.95/16.05 is centre ± radius — so the round caps bury
+         themselves in the discs instead of floating beside them as nubs.
+         The 3.0dp stroke separation keeps the pair reading as two bridges
+         at tile size while staying close like the board's doubles. -->
+    <path
+        android:pathData="M7.41,4.1H16.59M7.41,7.1H16.59M18.4,7.95V16.05M7.95,18.4H16.05"
+        android:strokeColor="#000000"
+        android:strokeWidth="1.25"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <!-- The islands, filled discs like the board's clue discs, rounded
+         like the boards' filled marks. -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M3.25,5.6a2.35,2.35 0 1,0 4.7,0a2.35,2.35 0 1,0 -4.7,0z M16.05,5.6a2.35,2.35 0 1,0 4.7,0a2.35,2.35 0 1,0 -4.7,0z M16.05,18.4a2.35,2.35 0 1,0 4.7,0a2.35,2.35 0 1,0 -4.7,0z M3.25,18.4a2.35,2.35 0 1,0 4.7,0a2.35,2.35 0 1,0 -4.7,0z" />
+</vector>
