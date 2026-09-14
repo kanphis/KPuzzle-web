@@ -3,12 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KPuzzle</title>
+    <title>KPuzzle — 12 Classic Logic Puzzles in Your Browser</title>
+    <meta name="description" content="Play 12 classic logic puzzles — sudoku, nonograms, minesweeper, hitori, kakuro and more — free in your browser. Step-by-step hints, offline play, no ads.">
+    <link rel="canonical" href="https://kanphis.github.io/KPuzzle-web/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="KPuzzle">
+    <meta property="og:title" content="KPuzzle — 12 Classic Logic Puzzles in Your Browser">
+    <meta property="og:description" content="Play 12 classic logic puzzles — sudoku, nonograms, minesweeper, hitori, kakuro and more — free in your browser. Step-by-step hints, offline play, no ads.">
+    <meta property="og:url" content="https://kanphis.github.io/KPuzzle-web/">
+    <meta property="og:image" content="https://kanphis.github.io/KPuzzle-web/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KPuzzle — 12 Classic Logic Puzzles in Your Browser">
+    <meta name="twitter:description" content="Play 12 classic logic puzzles — sudoku, nonograms, minesweeper, hitori, kakuro and more — free in your browser. Step-by-step hints, offline play, no ads.">
+    <meta name="twitter:image" content="https://kanphis.github.io/KPuzzle-web/og-image.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="KPuzzle">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FBF8FF">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121318">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "KPuzzle",
+        "url": "https://kanphis.github.io/KPuzzle-web/",
+        "description": "Play 12 classic logic puzzles — sudoku, nonograms, minesweeper, hitori, kakuro and more — free in your browser. Step-by-step hints, offline play, no ads.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "inLanguage": ["en", "ru"],
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": "Sudoku, Hitori, Kakuro, Suguru, Slitherlink, Masyu, Hashiwokakero, Nurikabe, Akari, Shikaku, Nonograms, Minesweeper"
+    }
+    </script>
+    <noscript>
+        <!-- The canvas app has no content without JS: hide the splash and
+             leave crawlers and no-JS visitors the textual fallback below. -->
+        <style>
+            #loader { display: none; }
+            noscript {
+                display: block;
+                padding: 48px 24px;
+                font: 16px/1.5 system-ui, sans-serif;
+                color: #1A1B21;
+                background: #FBF8FF;
+            }
+            @media (prefers-color-scheme: dark) {
+                noscript { color: #E3E1E9; background: #121318; }
+            }
+            noscript h1 { font-size: 24px; margin: 0 0 12px; }
+            noscript p { max-width: 60ch; margin: 0 0 12px; }
+        </style>
+    </noscript>
     <style>
         html, body {
             width: 100%;
@@ -72,6 +123,13 @@
     </style>
 </head>
 <body>
+<noscript>
+    <h1>KPuzzle — 12 classic logic puzzles</h1>
+    <p>Sudoku, Hitori, Kakuro, Suguru, Slitherlink, Masyu, Hashiwokakero, Nurikabe, Akari, Shikaku, Nonograms, Minesweeper. Puzzles are generated on your device, every game has
+    step-by-step hints, and everything runs offline.</p>
+    <p>KPuzzle is a JavaScript application — please enable JavaScript to
+    play.</p>
+</noscript>
 <div id="loader">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" aria-label="KPuzzle">
         <path d="M36.9,35.8L65.42,31.79A6,6 122.05,0 1,72.2 36.9L76.21,65.42A6,6 117.28,0 1,71.1 72.2L42.58,76.21A6,6 95.81,0 1,35.8 71.1L31.79,42.58A6,6 54.8,0 1,36.9 35.8z" style="fill:var(--logo-sheet)"/>
@@ -91,6 +149,15 @@
 <script type="application/javascript" src="webApp.js"></script>
 <script type="application/javascript">
     webApp();
+</script>
+<script type="application/javascript">
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            // sw.js is generated at publish time (scripts/make_sw.py) and
+            // does not exist on dev servers — swallow that rejection.
+            navigator.serviceWorker.register('sw.js').catch(function () {});
+        });
+    }
 </script>
 </body>
 </html>
